@@ -1,0 +1,66 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Carousel from '~/components/swiper/swiper.jsx';
+
+import DCEvent from '~/assets/images/IMG-20240623-dc-event.jpg';
+
+const metadata = {
+  title: 'Norvisi Association of New Jersey',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Carousel
+    client:load
+    items={[
+      {
+        title: 'Norvisi joins Ewe Assoc of Washington DC Metro Inc to celebrate their 40th anniversary',
+        image: DCEvent.src,
+        slug: '/2024-norvisi-joins-dc',
+      },
+    ]}
+  />
+
+  <!-- Note Widget ******************* -->
+  <!-- 
+  <Note />
+-->
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts
+    title="News and Events"
+    information={`Happenings around town.
+                `}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Frequently asked questions about Norvisi"
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Why should I join?',
+        description:
+          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+      },
+      {
+        title: 'Do you sponsor visas?',
+        description:
+          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+      },
+      {
+        title: "Is Norvisi for Ewe's only?",
+        description:
+          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+      },
+    ]}
+  />
+</Layout>
