@@ -28,7 +28,7 @@ const whenExternalScripts = (items = []) =>
 
 export default defineConfig({
   output: 'static',
-
+  site: 'https://norvisinj.org',
   integrations: [tailwind({
     applyBaseStyles: false,
   }), sitemap(), mdx(), icon({
