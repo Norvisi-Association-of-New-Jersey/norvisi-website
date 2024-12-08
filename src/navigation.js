@@ -10,8 +10,8 @@ export const headerData = {
       text: 'About',
       links: [
         {
-          text: 'Mission',
-          href: getPermalink('#'),
+          text: 'Executives',
+          href: getPermalink('executives'),
         },
         {
           text: 'History',

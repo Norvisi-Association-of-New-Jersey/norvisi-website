@@ -32,10 +32,22 @@ const Carousel = ({ items }) => {
         >
             {items.map((item) => (
                 <SwiperSlide key={item.title}>
-                    <a
-                        href={`${item.slug}`}
-                        className="relative block group"
-                    >
+                   { item.slug == "#" ? (
+                    <div>
+                        <div className="w-full h-svh">
+                            <img
+                                className="cursor-default object-cover rounded w-full h-full"
+                                src={item.image}
+                            />
+                        </div>
+                        <div className="absolute opacity-50 w-full bottom-0 pt-4 pb-8 left-0 justify-center items-center text-center text-sekano-dark bg-white">
+                            <h2 className="text-xl lg:text-4xl pt-2">
+                                {item.title}
+                            </h2>
+                        </div>
+                        </div>
+                   ) : (
+                    <a href={`${item.slug}`} className="relative block group"> 
                         <div className="w-full h-svh">
                             <img
                                 className="cursor-pointer object-cover rounded w-full h-full"
@@ -48,6 +60,8 @@ const Carousel = ({ items }) => {
                             </h2>
                         </div>
                     </a>
+                   )
+                   }
                 </SwiperSlide>
             ))}
         </Swiper>

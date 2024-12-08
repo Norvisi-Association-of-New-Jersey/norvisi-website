@@ -170,7 +170,7 @@ export const findLatestPosts = async ({ count }: { count?: number }): Promise<Ar
   const _count = count || 4;
   const posts = await fetchPosts();
 
-  return posts ? posts.slice(1, _count) : [];
+  return posts ? posts.slice(0, _count) : [];
 };
 
 /** */
