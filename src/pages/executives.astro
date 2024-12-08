@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
-import Content from '~/components/widgets/Content.astro';
+import { Image } from 'astro:assets';
 
 import president from '~/assets/images/IMG-matilda.jpg';
 import vice_president from '~/assets/images/IMG-seshime.jpg';
@@ -16,153 +15,130 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Content Widget **************** -->
+  <div class="p-12">
+    <h1 class="text-5xl font-bold text-center my-8">Our Executives</h1>
+    <div class="mx-auto container max-w-screen-lg grid grid-cols-3 gap-12">
+      <a>
+        <Image
+          src={president}
+          alt="Matilda Akaho"
+          height={720}
+          quality="mid"
+          format="avif"
+          class:list={['rounded-lg transition-all', 'group-hover:shadow-lg group-hover:opacity-90']}
+        />
+        <div class="mt-4 text-center text-neutral-700">
+          <strong class="font-bold text-2xl text-orange-500">Matilda Akaho</strong>
+          <p class="text-xl text-gray-500">President</p>
+        </div>
+      </a>
+      <a>
+        <Image
+          src={vice_president}
+          alt="Seshime Kodzo Dovlo"
+          height={720}
+          quality="mid"
+          format="avif"
+          class:list={['rounded-lg transition-all', 'group-hover:shadow-lg group-hover:opacity-90']}
+        />
+        <div class="mt-4 text-center text-neutral-700">
+          <strong class="font-bold text-2xl text-orange-500">Seshime Kodzo Dovlo</strong>
+          <p class="text-xl text-gray-500">Vice President</p>
+        </div>
+      </a>
+      <a>
+        <Image
+          src={no_image}
+          alt="Rosemary Antwi"
+          height={720}
+          quality="mid"
+          format="avif"
+          class:list={['rounded-lg transition-all', 'group-hover:shadow-lg group-hover:opacity-90']}
+        />
+        <div class="mt-4 text-center text-neutral-700">
+          <strong class="font-bold text-2xl text-orange-500">Rosemary Antwi</strong>
+          <p class="text-xl text-gray-500">Secretary</p>
+        </div>
+      </a>
+      <a>
+        <Image
+          src={no_image}
+          alt="Vicentia Akpene Ackuaku-Dzandu"
+          height={720}
+          quality="mid"
+          format="avif"
+          class:list={['rounded-lg transition-all', 'group-hover:shadow-lg group-hover:opacity-90']}
+        />
+        <div class="mt-4 text-center text-neutral-700">
+          <strong class="font-bold text-2xl text-orange-500">Vicentia Akpene Ackuaku-Dzandu</strong>
+          <p class="text-xl text-gray-500">Assistant Secretary</p>
+        </div>
+      </a>
+      <a>
+        <Image
+          src={financial_secretary}
+          alt="Felicia Adadevoh"
+          height={720}
+          quality="mid"
+          format="avif"
+          class:list={['rounded-lg transition-all', 'group-hover:shadow-lg group-hover:opacity-90']}
+        />
+        <div class="mt-4 text-center text-neutral-700">
+          <strong class="font-bold text-2xl text-orange-500">Felicia Adadevoh</strong>
+          <p class="text-xl text-gray-500">Financial Secretary</p>
+        </div>
+      </a>
+      <a>
+        <Image
+          src={no_image}
+          alt="Rita Tamakloe"
+          height={720}
+          quality="mid"
+          format="avif"
+          class:list={['rounded-lg transition-all', 'group-hover:shadow-lg group-hover:opacity-90']}
+        />
+        <div class="mt-4 text-center text-neutral-700">
+          <strong class="font-bold text-2xl text-orange-500">Rita Tamakloe</strong>
+          <p class="text-xl text-gray-500">Treasurer</p>
+        </div>
+      </a>
+      <a>
+        <Image
+          src={organizing_secretary}
+          alt="Stephen Awunyo"
+          height={720}
+          quality="mid"
+          format="avif"
+          class:list={['rounded-lg transition-all', 'group-hover:shadow-lg group-hover:opacity-90']}
+        />
+        <div class="mt-4 text-center text-neutral-700">
+          <strong class="font-bold text-2xl text-orange-500">Stephen Awunyo</strong>
+          <p class="text-xl text-gray-500">Organizing Secretary</p>
+        </div>
+      </a>
+      <a>
+        <Image
+          src={assistant_organizing_secretary}
+          alt="Felicia Nunana Kukah"
+          height={720}
+          quality="mid"
+          format="avif"
+          class:list={['rounded-lg transition-all', 'group-hover:shadow-lg group-hover:opacity-90']}
+        />
+        <div class="mt-4 text-center text-neutral-700">
+          <strong class="font-bold text-2xl text-orange-500">Felicia Nunana Kukah</strong>
+          <p class="text-xl text-gray-500">Assistant Organizing Secretary</p>
+        </div>
+      </a>
+    </div>
+  </div>
 
-  <Content
-    id="executives"
-    title="Our Executives"
-    isReversed
-    isAfterContent={true}
-    image={{
-      src: president.src,
-      alt: 'Matilda Akaho',
-      height: 150,
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        <span class="text-2xl">Matilda Elikem Akaho</span>
-        <br />
-        <span class="text-xl">President</span>
-      </h3>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+  <!--
 
-  <Content
-    isReversed
-    isAfterContent={true}
-    image={{
-      src: vice_president.src,
-      alt: 'Seshime Kodzo Dovlo',
-      height: 60,
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        <span class="text-2xl">Seshime Kodzo Dovlo</span>
-        <br />
-        <span class="text-xl">Vice President</span>
-      </h3>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
 
-  <Content
-    isReversed
-    isAfterContent={true}
-    image={{
-      src: no_image.src,
-      alt: 'Rosemary Antwi',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        <span class="text-2xl">Rosemary Antwi</span>
-        <br />
-        <span class="text-xl">Secretary</span>
-      </h3>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+ 
 
-  <Content
-    isReversed
-    isAfterContent={true}
-    image={{
-      src: no_image.src,
-      alt: 'Vicentia Akpene Ackuaku-Dzandu',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        <span class="text-2xl">Vicentia Akpene Adams-Adzadu</span>
-        <br />
-        <span class="text-xl">Assistant Secretary</span>
-      </h3>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <Content
-    isReversed
-    isAfterContent={true}
-    image={{
-      src: financial_secretary.src,
-      alt: 'Felicia Adadevoh',
-      height: 800,
-      width: 1400,
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        <span class="text-2xl">Felicia Adadevoh</span>
-        <br />
-        <span class="text-xl">Financial Secretary</span>
-      </h3>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <Content
-    isReversed
-    isAfterContent={true}
-    image={{
-      src: no_image.src,
-      alt: 'Rita Tamakloe',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        <span class="text-2xl">Rita Tamakloe</span>
-        <br />
-        <span class="text-xl">Treasurer</span>
-      </h3>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <Content
-    isReversed
-    isAfterContent={true}
-    image={{
-      src: organizing_secretary.src,
-      alt: 'Stephen Awunyo',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        <span class="text-2xl">Stephen Awunyo</span>
-        <br />
-        <span class="text-xl">Organizing Secretary</span>
-      </h3>
-    </Fragment>
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+  
 
   <Content
     isReversed
@@ -183,4 +159,6 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
+</Layout>
+-->
 </Layout>
